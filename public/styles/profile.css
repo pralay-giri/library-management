@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    word-wrap: balance;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(45deg, #05e6e2,
+    #d86fdf,
+    #f20075);
+    background-size: 400%;
+    animation: bg-animation 30s infinite alternate;
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+
+    100% {
+        background-position: right;
+    }
+}
+
+
+::selection {
+    background-color: rgb(7, 65, 73);
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: .7rem;
+    background-color: #121d31;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(
+        45deg,
+        #12c2e9,
+        #c471ed,
+        #f64f59);
+    border-radius: 10px;
+}
+
+.nav {
+    position: relative;
+    background-color: #121d31;
+    padding: 1rem;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+}
+
+.nav h1 {
+    margin-right: auto;
+    color: white;
+}
+
+.nav i {
+    display: none;
+    position: absolute;
+    top: 35%;
+    right: 5%;
+    font-size: 20px;
+}
+
+.nav i:hover {
+    color: #20b2aa;
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav ul #logo {
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.nav ul li {
+    list-style: none;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav ul li a img {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.nav ul li a:hover,
+.nav #logo span {
+    transition: color .4s;
+    color: lightseagreen;
+}
+
+section {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section .profile {
+    position: relative;
+    /* border: 1px solid black; */
+    margin-inline: min(7%, 90vw);
+    margin-block: min(10%, 90vh);
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.56);
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+section .profile .profile-photo {
+    width: 5rem;
+    height: 5rem;
+    margin: auto;
+    margin-bottom: 1rem;
+    background-image: url("../media/PG_3.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+section .profile > *{
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+section .profile .address{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-wrap: wrap;
+    text-transform: capitalize;
+}
+
+section .profile .address *::after{
+    content: "|";
+    padding: 1px;
+}
+section .profile .address :last-child:after{
+    content: "";
+}
+
+footer {
+    position: relative;
+    background-color: #121d31;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    padding-block: 2rem;
+    color: white;
+}
+
+footer>* {
+    padding: 10px;
+}
+
+footer ul {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+footer ul li {
+    list-style: none;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+footer ul li a:hover {
+    color: rgb(7, 65, 73);
+}
+
+@media (max-width: 426px) {
+    .nav #logo {
+        font-size: x-large;
+    }
+
+    .nav i {
+        display: block;
+        z-index: 9999;
+    }
+
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1.5rem;
+        position: absolute;
+        top: -1rem;
+        right: 0;
+        left: 50%;
+        height: 100vh;
+        z-index: 1;
+        padding-top: min(40%, 20vh);
+        background-color: rgba(17, 16, 16, .5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+
+    .active ul {
+        display: flex;
+    }
+
+    section .profile .profile-photo {
+        width: 3rem;
+        height: 3rem;
+    }
+}

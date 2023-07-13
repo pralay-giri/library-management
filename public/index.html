@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+    <title>Seacom Libary</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div class="nav">
+        <h1 id="logo">Seacom<span>.</span></h1>
+        <ul>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+            <li>
+                <a href="../all_books.html" target="_blank">Books</a>
+            </li>
+            <li>
+                <a href="../profile.html" target="_blank">
+                    <img src="./media/PG_3.png" alt="" width="15px">
+                </a>
+            </li>
+        </ul>
+        <i class="fa-solid fa-bars hambar"></i>
+    </div>
+    <div id="home">
+        <h1 id="title">Seacom Library</h1>
+    </div>
+    <div id="about">
+        <div class="wellcome-note">
+            <h1>Welcome to our Library Management System!</h1>
+            <p>At our library, we believe in the transformative power of knowledge and the joy of reading. Our library
+                management system is designed to streamline operations, enhance accessibility, and provide an
+                exceptional
+                experience for library patrons and staff alike.
+                With our cutting-edge technology and user-friendly interface, we have created a seamless platform that
+                simplifies the entire process of managing library resources. From cataloging and organizing books to
+                tracking lending and returns, our system ensures efficiency and accuracy in every task.
+            </p>
+        </div>
+        <div class="keys-feature">
+            <div class="key" id="catalog">
+                <h2>Online Catalog</h2>
+                <p>
+                    Our system provides a comprehensive online catalog that allows users to search for books, magazines,
+                    journals, and other library materials from anywhere, at any time. Patrons can easily browse through
+                    the
+                    collection, check availability, and place holds or reservations.
+                </p>
+            </div>
+            <div class="key" id="accounts" style="z-index:-2">
+                <h2>User Accounts</h2>
+                <p>
+                    We offer individual user accounts, allowing patrons to create their profiles, track their borrowing
+                    history, renew materials, and receive notifications for due dates or reserved items. Our system also
+                    supports different membership levels and privileges, facilitating seamless management of user
+                    categories such as students, faculty, and external members.
+                </p>
+            </div>
+            <div class="key" id="management" style="z-index:-3">
+                <h2>Resource Management</h2>
+                <p>
+                    Our system assists librarians in managing the library's resources effectively. It allows them to
+                    track the status and location of each item, update information such as editions or publication
+                    dates, and generate reports on circulation, usage, and popularity. With these insights, librarians
+                    can make informed decisions about purchasing new materials and retiring outdated ones.
+                </p>
+            </div>
+            <div class="key" id="reservation" style="z-index:-4">
+                <h2>Reservation and Renewal</h2>
+                <p>
+                    Patrons can easily reserve books that are currently checked out by others, ensuring they don't miss
+                    out on popular titles. The system also supports online renewals, allowing users to extend the
+                    borrowing period for eligible materials, provided there are no pending requests from other users.
+                </p>
+            </div>
+            <div class="key" id="fines" style="z-index:-5">
+                <h2>Fines and Notifications</h2>
+                <p>
+                    Our system automatically calculates fines for overdue items, making it easier for patrons to manage
+                    their accounts. Notifications are sent via email or SMS, reminding users of upcoming due dates,
+                    reserved items ready for pickup, or outstanding fines to be paid.
+                </p>
+            </div>
+
+        </div>
+        <p id="commit" style="z-index: -6;">
+            We are committed to continually improving our library management system to meet the evolving needs of
+            libraries and their patrons. Our aim is to provide an efficient and user-friendly experience that enhances
+            the joy of reading and supports lifelong learning.
+
+            Thank you for choosing our Library Management System. Together, let's embark on a journey of exploration,
+            discovery, and knowledge!
+        </p>
+    </div>
+    <footer id="contact">
+        <p class="gmail">seacom@gmail.com</p>
+        <ul>
+            <li id="fb">
+                <a href="https://www.facebook.com">
+                    <i class="fa-brands fa-square-facebook"></i>
+                </a>
+            </li>
+            <li id="tg">
+                <a href="https://t.me/+UJpkp3_WTmtiYmU1">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+            </li>
+            <li id="linkedin">
+                <a href="www.linkedin.com/in/prala-ygiri">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </li>
+            <li id="twitter">
+                <a href="https://twitter.com">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+            </li>
+        </ul>
+        <p class="copyright">&#169 2023 All Rights Reserved Seacom Management College</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/c485021909.js" crossorigin="anonymous"></script>
+    <script>
+        let title = document.querySelector("#home #title")
+        let home = document.querySelector("#home")
+        window.addEventListener("scroll", () => {
+            let y = window.scrollY
+            title.setAttribute('style', `letter-spacing: ${y * 0.1}px; -webkit-filter: blur(${y * 0.007}px)`)
+
+        })
+
+        let hambar = document.querySelector(".nav i")
+        let navbar = document.querySelector(".nav")
+        hambar.addEventListener("click", () => {
+            navbar.classList.toggle("active")
+        })
+    </script>
+</body>
+
+</html>

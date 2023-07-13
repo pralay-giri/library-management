@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    word-wrap: balance;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(45deg, #05e6e2,
+            #d86fdf,
+            #f20075);
+    background-size: 400%;
+    animation: bg-animation 30s infinite alternate;
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+
+    100% {
+        background-position: right;
+    }
+}
+
+::selection {
+    background-color: rgb(7, 65, 73);
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: .7rem;
+    background-color: #121d31;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(45deg,
+            #12c2e9,
+            #c471ed,
+            #f64f59);
+    border-radius: 10px;
+}
+
+/* 
+   ##############
+   navigation bar
+   ##############
+*/
+
+.nav {
+    position: relative;
+    background-color: #121d31;
+    padding: 1rem;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+}
+
+.nav h1 {
+    margin-right: auto;
+    color: white;
+}
+
+.nav i {
+    display: none;
+    position: absolute;
+    top: 35%;
+    right: 5%;
+    font-size: 20px;
+}
+
+.nav i:hover {
+    color: #20b2aa;
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav ul #logo {
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.nav ul li {
+    list-style: none;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav ul li a img {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.nav ul li a:hover,
+.nav #logo span {
+    transition: color .4s;
+    color: lightseagreen;
+}
+
+/* 
+   ##############
+   section in css
+   ##############
+*/
+
+
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section .login_form {
+    margin-block: min(5%, 10vh);
+    padding: 2rem;
+    background-color: rgb(201, 233, 241);
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+section .login_form form .logo {
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid black;
+    margin: auto;
+    border-radius: 50%;
+    background-image: url("../media/PG_3.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section .login_form form .input {
+    position: relative;
+    margin-block: 1rem;
+}
+
+section .login_form form .input input {
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.358);
+    border-radius: 5px;
+    padding: 8px;
+}
+
+section .login_form form .input label {
+    position: absolute;
+    padding: 5px;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+section .login_form form .input input:is(:valid, :focus) {
+    border-color: #7c0a39;
+    transition: border .4s;
+}
+
+section .login_form form .input input:is(:valid, :focus)~label {
+    top: -10px;
+    left: 5px;
+    color: #7c0a39;
+    font-size: small;
+    padding-block: 1px;
+    transition: .4s;
+    background-color: rgb(201, 233, 241);
+    border-inline: 1px solid #7c0a39;
+}
+
+section .login_form form #submit {
+    text-align: center;
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.358);
+    border-radius: 5px;
+    outline: none;
+    background-color: #12c2e9;
+    cursor: pointer;
+}
+
+section .login_form form #submit:is(:hover, :focus) {
+    background-color: #12c2e9bb;
+}
+
+section .login_form p {
+    text-align: right;
+    font-size: small;
+    margin-top: 1rem;
+}
+
+section .login_form p a {
+    color: #7c0a39;
+}
+
+/* 
+   ##############
+       footer
+   ##############
+*/
+
+footer {
+    position: relative;
+    background-color: #121d31;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    padding-block: 2rem;
+    color: white;
+}
+
+footer>* {
+    padding: 10px;
+}
+
+footer ul {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+footer ul li {
+    list-style: none;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+footer ul li a:hover {
+    color: rgb(7, 65, 73);
+}
+
+/* 
+   ##############
+   responcive css
+   ##############
+*/
+
+
+@media (max-width: 426px) {
+    .nav #logo {
+        font-size: x-large;
+    }
+
+    .nav i {
+        display: block;
+        z-index: 9999;
+    }
+
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1.5rem;
+        position: absolute;
+        top: -1rem;
+        right: 0;
+        left: 50%;
+        height: 100vh;
+        z-index: 1;
+        padding-top: min(40%, 20vh);
+        background-color: rgba(17, 16, 16, .5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+
+    .active ul {
+        display: flex;
+    }
+
+    section .login_form form .logo {
+        width: 4rem;
+        height: 4rem;
+    }
+}

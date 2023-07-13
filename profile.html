@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+    <title>Seacom Libary</title>
+    <link rel="stylesheet" href="/public/styles/profile.css">
+</head>
+
+<body>
+    <div class="nav">
+        <h1 id="logo">Seacom<span>.</span></h1>
+        <ul>
+            <li>
+                <a href="./public/index.html#home" target="_blank">Home</a>
+            </li>
+            <li>
+                <a href="./public/index.html#about" target="_blank">About</a>
+            </li>
+            <li>
+                <a href="./public/index.html#contact" target="_blank">Contact</a>
+            </li>
+            <li>
+                <a href="./all_books.html" target="_blank">Books</a>
+            </li>
+            <li>
+                <a href="./cart.html" target="_blank">Cart</a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/public/media/PG_3.png" alt="" width="15px">
+                </a>
+            </li>
+        </ul>
+        <i class="fa-solid fa-bars hambar"></i>
+    </div>
+    <section>
+        <div class="profile">
+            <div class="profile-photo">
+            </div>
+            <p class="name">Pralay Giri</p>
+            <p class="role">student</p>
+            <p class="about">fulstack web developer</p>
+            <p class="gmail">pralay@gmail.com</p>
+            <p class="phone_no">9641462817</p>
+            <div class="address">
+                <p id="city">Mohanpur</p>
+                <p id="state">West Bengal</p>
+                <p id="country">India</p>
+                <p id="postal_code">721436</p>
+            </div>
+            <!-- <a href="#">edit profile <i class="fa-regular fa-pen-to-square"></i></a> -->
+        </div>
+    </section>
+    <footer id="contact">
+        <p class="gmail">seacom@gmail.com</p>
+        <ul>
+            <li id="fb">
+                <a href="https://www.facebook.com">
+                    <i class="fa-brands fa-square-facebook"></i>
+                </a>
+            </li>
+            <li id="tg">
+                <a href="https://t.me/+UJpkp3_WTmtiYmU1">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+            </li>
+            <li id="linkedin">
+                <a href="www.linkedin.com/in/prala-ygiri">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </li>
+            <li id="twitter">
+                <a href="https://twitter.com">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+            </li>
+        </ul>
+        <p class="copyright">&#169 2023 All Rights Reserved Seacom Management College</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/c485021909.js" crossorigin="anonymous"></script>
+    <script>
+        const hambar = document.querySelector(".nav i")
+        const navbar = document.querySelector(".nav")
+        hambar.addEventListener("click", () => {
+            navbar.classList.toggle("active")
+        })
+        
+        const quentity = document.querySelector(".container .book-info .quentity p span")
+        const select = document.querySelector(".container .book-info .quentity select")
+
+        select.addEventListener("change", ()=>{
+            quentity.innerHTML = select.value
+        })
+
+    </script>
+</body>

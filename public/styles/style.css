@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    word-wrap: balance;
+}
+
+html {
+    scroll-behavior: smooth;
+    color-scheme: light dark;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #121d31;
+}
+
+::selection {
+    background-color: rgb(7, 65, 73);
+}
+
+::-webkit-scrollbar {
+    width: .7rem;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(
+        45deg,
+        #12c2e9,
+        #c471ed,
+        #f64f59);
+    border-radius: 10px;
+}
+
+.nav {
+    position: relative;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 1rem;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+}
+
+.nav h1 {
+    margin-right: auto;
+}
+
+.nav i {
+    display: none;
+    position: absolute;
+    top: 35%;
+    right: 5%;
+    font-size: 20px;
+}
+
+.nav i:hover {
+    color: #20b2aa;
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav ul #logo {
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.nav ul li {
+    list-style: none;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav ul li a img {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.nav ul li a:hover,
+.nav #logo span {
+    transition: color .4s;
+    color: lightseagreen;
+}
+
+#home {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-image: url("../media/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#home #title {
+    font-weight: 600;
+    font-size: 4rem;
+    text-transform: uppercase;
+    transition: letter-spacing .06s;
+    word-wrap: balance;
+    text-align: center;
+}
+
+#about {
+    min-height: 100vh;
+}
+
+#about .wellcome-note {
+    position: relative;
+    isolation: isolate;
+    margin-block: 5%;
+    padding: 5rem min(20vw, 10%);
+    z-index: 1;
+}
+
+#about .wellcome-note::before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background-image: linear-gradient(45deg,
+            #12c2e9,
+            #c471ed,
+            #f64f59);
+    transform: skewY(-5deg);
+    box-shadow: 0 20px 15px rgba(0, 0, 0, .5);
+    z-index: -1;
+}
+
+#about .wellcome-note>h1 {
+    word-wrap: balance;
+    text-align: left;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+
+}
+
+#about .wellcome-note>p {
+    word-wrap: balance;
+    word-break: normal;
+    letter-spacing: 1px;
+}
+
+#about .key {
+    position: relative;
+    isolation: isolate;
+    margin-block: 5%;
+    padding: 5rem min(20vw, 10%);
+}
+
+#about .key>h2 {
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding-block: 1rem;
+    word-wrap: balance;
+}
+
+#about .key>p {
+    letter-spacing: 1px;
+}
+
+
+
+#about :is(#catalog, #fines):before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right,
+            #fdc830,
+            #f37335);
+    z-index: -1;
+    transform: skewY(5deg);
+    box-shadow: 0 20px 15px rgba(0, 0, 0, .5);
+}
+
+#about :is(#accounts, #reservation):before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right,
+            #00f260,
+            #0575e6);
+    z-index: -1;
+    transform: skewY(-5deg);
+    box-shadow: 0 20px 15px rgba(0, 0, 0, .5);
+
+}
+
+#about :is(#management, #commit):before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(45deg,
+            #05e6e2,
+            #d86fdf,
+            #f20075);
+    z-index: -1;
+    transform: skewY(5deg);
+    box-shadow: 0 20px 15px rgba(0, 0, 0, .5);
+}
+
+#about #commit {
+    position: relative;
+    isolation: isolate;
+    margin-block: 5%;
+    padding: 5rem min(20vw, 10%);
+    margin-bottom: 10%;
+}
+
+#about #commit::before {
+    transform: skewY(-5deg);
+}
+
+footer {
+    position: relative;
+    background-color: lightseagreen;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    padding-block: 2rem;
+}
+
+footer>* {
+    padding: 10px;
+}
+
+footer ul {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+footer ul li {
+    list-style: none;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+footer ul li a:hover {
+    color: rgb(7, 65, 73);
+}
+
+@media (max-width: 426px) {
+    .nav #logo {
+        font-size: x-large;
+    }
+
+    .nav i {
+        display: block;
+        z-index: 9999;
+    }
+
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1.5rem;
+        position: absolute;
+        top: -1rem;
+        right: 0;
+        left: 50%;
+        height: 100vh;
+        z-index: 1;
+        padding-top: min(40%, 20vh);
+        background-color: rgba(17, 16, 16, .5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+
+    .active ul {
+        display: flex;
+    }
+
+    #home #title {
+        font-size: 3rem;
+    }
+}
